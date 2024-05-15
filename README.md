@@ -6,7 +6,6 @@
 
 ## 项目结构
 
-    ├── README.md
     ├── modules                    --- 本地包依赖目录，注意需要在 package-lock.json 和 yarn.lock 中同步固定
     │   └── @monaco-editor-react
     ├── src
@@ -20,7 +19,8 @@
     ├── .umirc.js                  --- umi配置文件
     ├── package.json
     ├── package-lock.json
-    └── yarn.lock
+    ├── yarn.lock
+    └── README.md
 
 ## 注意
 
