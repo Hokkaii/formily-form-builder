@@ -25,11 +25,11 @@
 
     在某些 webpack 版本和配置中，可能会出现编译 @monaco-editor/react 包失败报错的情况，这是因为 @designable/react-settings-form包依赖了  @monaco-editor/react包，而后者的 es 编辑版本过高出现一些高级语法导致的，这个问题可以通过配置 webpack 的 loader 选项进行配置。
     如果上述方法无效，则可以通过手动打包 @monaco-editor/react 包并将打包结果放置到本地进行加载解决，同时要去修改 package-lock.json 或 yarn.lock 固定住包对包的依赖关系：
+    
     ```
-
     ...
     file:modules/@monaco-editor-react
     ...
-    
     ```
+    
     项目里 modules 放置了 4.x 版本的 @monaco-editor/react 包的 es 低版本的编辑包，可以自行引用。
