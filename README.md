@@ -28,7 +28,7 @@
 
 ```
 ...
-file:modules/@monaco-editor-react
+file: modules/@monaco-editor-react
 ...
 ```
 
