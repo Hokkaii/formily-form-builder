@@ -6,20 +6,20 @@ Formily 表单设计器是基于 designable 而扩展出来的扩展包，它在
 
 ### 项目结构
 
-├── README.md
-├── modules                    --- 本地包依赖目录，注意需要在 package-lock 和 yarn.lock 中同步
-│   └── @monaco-editor-react
-├── src
-│   ├── .umi                   --- umi临时目录
-│   └── pages                  --- 路由文件夹
-│        └── home
-│             ├── service      --- schema 保存与加载逻辑
-│             ├── source       --- 核心资源文件夹，主要包含表单控件、控件相关schema、控件相关locales以及一些创建控件所需的逻辑等
-│             ├── widgets      --- 控件目录，包括顶部按钮、logo、Markup-tab、Preview-tab、Schema-tab等
-│             └── index        --- 表单设计器展示页
-├── package.json
-├── package-lock.json
-└── yarn.lock
+    ├── README.md
+    ├── modules                    --- 本地包依赖目录，注意需要在 package-lock 和 yarn.lock 中同步
+    │   └── @monaco-editor-react
+    ├── src
+    │   ├── .umi                   --- umi临时目录
+    │   └── pages                  --- 路由文件夹
+    │        └── home
+    │             ├── service      --- schema 保存与加载逻辑
+    │             ├── source       --- 核心资源文件夹，主要包含表单控件、控件相关schema、控件相关locales以及一些创建控件所需的逻辑等
+    │             ├── widgets      --- 控件目录，包括顶部按钮、logo、Markup-tab、Preview-tab、Schema-tab等
+    │             └── index        --- 表单设计器展示页
+    ├── package.json
+    ├── package-lock.json
+    └── yarn.lock
 
 ### 注意
 
