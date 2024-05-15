@@ -17,6 +17,7 @@
     │             ├── source       --- 核心资源文件夹，主要包含表单控件、控件相关schema、控件相关locales以及一些创建控件所需的逻辑等
     │             ├── widgets      --- 控件目录，包括顶部按钮、logo、Markup-tab、Preview-tab、Schema-tab等
     │             └── index        --- 表单设计器展示页
+    ├── .umirc.js                  --- umi配置文件
     ├── package.json
     ├── package-lock.json
     └── yarn.lock
@@ -32,4 +33,4 @@ file: modules/@monaco-editor-react
 ...
 ```
 
-项目里 modules 放置了 4.x 版本的 @monaco-editor/react 包的 es 低版本的编辑包，可以自行引用。
+项目的 modules目录里放置了 4.x 版本的 @monaco-editor/react 包的 es 低版本的编辑包，可以自行引用。
