@@ -2,12 +2,12 @@
 
 ## 说明
 
-Formily 表单设计器是基于 [designable](https://github.com/alibaba/designable) 而扩展出来的扩展包，它在继承了 designable 的基础能力上，提供了 Formily 基础表单的搭建和配置能力，本项目提供了一个可运行的 demo并内置一些简单的自定义控件，可以直接在本地运行。
+[Formily表单设计器](https://designable-antd.formilyjs.org)是基于 [designable](https://github.com/alibaba/designable) 而扩展出来的扩展包，它在继承了 designable 的基础能力上，提供了 Formily 基础表单的搭建和配置能力，本项目提供了一个可运行的 demo并内置一些简单的自定义控件，可以直接在本地运行。
 
 ## 项目结构
 
     ├── README.md
-    ├── modules                    --- 本地包依赖目录，注意需要在 package-lock 和 yarn.lock 中同步
+    ├── modules                    --- 本地包依赖目录，注意需要在 package-lock.json 和 yarn.lock 中同步固定
     │   └── @monaco-editor-react
     ├── src
     │   ├── .umi                   --- umi临时目录
