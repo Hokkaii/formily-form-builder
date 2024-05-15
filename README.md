@@ -1,118 +1,35 @@
-# fintech-platform
+# formily-form-builder
 
-#### 开发
+### 说明
 
-```sh
-$ yarn install
-$ yarn start
-```
+    Formily 表单设计器是基于 designable 而扩展出来的扩展包，它在继承了 designable 的基础能力上，提供了 Formily 基础表单的搭建和配置能力，本项目提供了一个可运行的 demo并内置一些简单的自定义控件，可以直接在本地运行。
 
-#### 启动 electron
+### 项目结构
 
-```sh
-$ yarn install
-$ yarn start
-$ yarn electron-start
-```
-
-#### 发布 uat
-
-```sh
-$ yarn install
-$ yarn build:uat
-```
-
-#### 发布 prod
-
-```sh
-$ yarn install
-$ yarn build
-```
-
-#### 打包 electron mac
-
-```sh
-$ yarn install
-$ yarn build
-$ yarn build:mac
-```
-
-#### 打包 electron win
-
-```sh
-$ yarn install
-$ yarn build
-$ yarn build:win
-```
-
-### 依赖说明
-
-    number金额处理 http://numeraljs.com/
+    ├── README.md
+    ├── modules                    --- 本地包依赖目录，注意需要在 package-lock 和 yarn.lock 中同步
+    │   └── @monaco-editor-react
+    ├── src
+    │   ├── .umi                   --- umi临时目录
+    │   └── pages                  --- 路由文件夹
+    │        └── home
+    │             ├── service      --- schema 保存与加载逻辑
+    │             ├── source       --- 核心资源文件夹，主要包含表单控件、控件相关schema、控件相关locales以及一些创建控件所需的逻辑等
+    │             ├── widgets      --- 控件目录，包括顶部按钮、logo、Markup-tab、Preview-tab、Schema-tab等
+    │             └── index        --- 表单设计器展示页
+    ├── package.json
+    ├── package-lock.json
+    └── yarn.lock
 
 ### 注意
 
-    ├── README.md
-    ├── config                      --- webpack 配置
-    │   ├── env.js
-    │   ├── getHttpsConfig.js
-    │   ├── modules.js
-    │   ├── paths.js
-    │   ├── webpack.config.js
-    │   └── webpackDevServer.config.js
-    ├── electron-builder.json       --- electron builder配置
-    ├── main.js                     --- electron 入口
-    ├── mock                        --- mock server
-    │   ├── api.js
-    │   ├── middleware
-    │   │   └── index.js
-    │   ├── package.json
-    │   ├── server.js
-    │   ├── user.js
-    │   └── yarn.lock
-    ├── modules                    --- 本地包依赖，注意需要在 package-lock 和 yarn.lock 中同步
-    ├── package.json
-    ├── preload.js
-    ├── public
-    │   ├── favicon.ico
-    │   ├── index.html
-    │   ├── logo192.png
-    │   ├── logo512.png
-    │   └── robots.txt
-    ├── scripts
-    │   ├── build.js
-    │   └── start.js
-    ├── src
-    │   ├── actions
-    │   │   ├── global.js           --- 全局状态
-    │   │   └── user.js
-    │   ├── assets                  --- 静态资源目录
-    │   │   └── ...
-    │   ├── components              --- 公共组件
-    │   │   ├── index.js
-    │   │   └── menuObj.js
-    │   ├── constant
-    │   │   ├── ACTION_TYPE.js
-    │   │   └── SelectList.js       --- select options data
-    │   ├── index.js                --- app入口
-    │   ├── index.less              --- 全局样式入口
-    │   ├── reducers
-    │   │   ├── global.js
-    │   │   ├── index.js
-    │   │   └── user.js
-    │   ├── routes
-    │   │   ├── ...                 --- 页面路由
-    │   │   ├── hooks.js            --- 公共hooks
-    │   │   └── index.js            --- 页面入口
-    │   ├── styles                  --- 公共样式
-    │   │   ├── common.less
-    │   │   ├── init.less           --- 初始化
-    │   │   └── theme.less          --- 公共样式变量
-    │   ├── theme.js                --- antd主题覆盖
-    │   └── utils
-    │       ├── CityOptions.json    --- 省市区三级联动数据 仅供antd Cascader组件使用
-    │       ├── api
-    │       │   ├── user.js         --- api
-    │       │   └── ...
-    │       ├── request.js          --- 请求统一封装
-    │       └── user.js             --- token
-    └── yarn.lock
+    在某些 webpack 版本和配置中，可能会出现编译 @monaco-editor/react 包失败报错的情况，这是因为 @designable/react-settings-form包依赖了  @monaco-editor/react包，而后者的 es 编辑版本过高出现一些高级语法导致的，这个问题可以通过配置 webpack 的 loader 选项进行配置。
+    如果上述方法无效，则可以通过手动打包 @monaco-editor/react 包并将打包结果放置到本地进行加载解决，同时要去修改 package-lock.json 或 yarn.lock 固定住包对包的依赖关系：
+    ```
+
+    ...
+    file:modules/@monaco-editor-react
+    ...
+    
+    ```
+    项目里 modules 放置了 4.x 版本的 @monaco-editor/react 包的 es 低版本的编辑包，可以自行引用。
