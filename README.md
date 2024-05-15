@@ -1,10 +1,10 @@
 # formily-form-builder
 
-### 说明
+## 说明
 
-Formily 表单设计器是基于 designable 而扩展出来的扩展包，它在继承了 designable 的基础能力上，提供了 Formily 基础表单的搭建和配置能力，本项目提供了一个可运行的 demo并内置一些简单的自定义控件，可以直接在本地运行。
+Formily 表单设计器是基于 [designable](https://github.com/alibaba/designable) 而扩展出来的扩展包，它在继承了 designable 的基础能力上，提供了 Formily 基础表单的搭建和配置能力，本项目提供了一个可运行的 demo并内置一些简单的自定义控件，可以直接在本地运行。
 
-### 项目结构
+## 项目结构
 
     ├── README.md
     ├── modules                    --- 本地包依赖目录，注意需要在 package-lock 和 yarn.lock 中同步
@@ -21,7 +21,7 @@ Formily 表单设计器是基于 designable 而扩展出来的扩展包，它在
     ├── package-lock.json
     └── yarn.lock
 
-### 注意
+## 注意
 
 在某些 webpack 版本和配置中，可能会出现编译 @monaco-editor/react 包失败报错的情况，这是因为 @designable/react-settings-form包依赖了 @monaco-editor/react包，而后者的 es 编辑版本过高出现一些高级语法导致的，这个问题可以通过配置 webpack 的 loader 选项进行配置。
 如果上述方法无效，则可以通过手动打包 @monaco-editor/react 包并将打包结果放置到本地进行加载解决，同时要去修改 package-lock.json 或 yarn.lock 固定住包对包的依赖关系：
