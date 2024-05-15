@@ -1,7 +1,6 @@
 import React from 'react';
 import { Input as FormilyInput } from '@formily/antd';
 import { createBehavior, createResource } from '@designable/core';
-
 import { createFieldSchema } from '../Field';
 import { AllSchemas } from '../../schemas';
 import { AllLocales } from '../../locales';

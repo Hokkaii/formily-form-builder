@@ -4,7 +4,7 @@ export const Steps = {
         title: '步骤条',
         settings: {
             'x-component-props': {
-                current: {
+                default: {
                     title: '当前步骤',
                 },
                 $options: {
@@ -17,8 +17,8 @@ export const Steps = {
         title: 'Steps',
         settings: {
             'x-component-props': {
-                current: {
-                    title: 'Current',
+                default: {
+                    title: 'Default',
                 },
                 $options: {
                     title: "Items",
@@ -30,8 +30,8 @@ export const Steps = {
         title: '텍스트',
         settings: {
             'x-component-props': {
-                current: {
-                    title: 'Current',
+                default: {
+                    title: 'Default',
                 },
                 $options: {
                     title: "Items",

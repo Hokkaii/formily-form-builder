@@ -8,42 +8,40 @@ import { AllSchemas } from '../../schemas';
 import { AllLocales } from '../../locales';
 
 const { Step } = AntdSteps;
-export const Steps = ({
-    current, $options, ...props
-}) => (
+export const Steps = (props) => {
+  return (
     <AntdSteps
-        current={ props.current }
-        { ...props }
+      current={props?.value || props?.default}
+      {...props}
     >
-        {
-            _.map($options, (item) => (
-                <Step
-                    title={ item?.$title }
-                    description={ item?.others?.description }
-                    subTitle={ item?.others?.subTitle }
-                />
-            ))
-        }
-
+      {_.map(props?.$options, (item) => (
+        <Step
+          title={item?.$title}
+          description={item?.others?.description}
+          subTitle={item?.others?.subTitle}
+        />
+      ))}
     </AntdSteps>
-);
+  );
+};
 Steps.Behavior = createBehavior({
-    name: 'Steps',
-    extends: ['Field'],
-    selector: (node) => node.props['x-component'] === 'Steps',
-    designerProps: { propsSchema: createVoidFieldSchema(AllSchemas.Steps) },
-    designerLocales: AllLocales.Steps
+  name: 'Steps',
+  extends: ['Field'],
+  selector: (node) => node.props['x-component'] === 'Steps',
+  designerProps: { propsSchema: createVoidFieldSchema(AllSchemas.Steps) },
+  designerLocales: AllLocales.Steps,
 });
 
 Steps.Resource = createResource({
-    icon: 'StepsSource',
-    elements: [
-        {
-            componentName: 'Field',
-            props: {
-                type: 'string',
-                'x-component': 'Steps'
-            }
-        }
-    ]
+  icon: 'StepsSource',
+  elements: [
+    {
+      componentName: 'Field',
+      props: {
+        type: 'number',
+        'x-decorator': 'FormItem',
+        'x-component': 'Steps',
+      },
+    },
+  ],
 });

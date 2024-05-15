@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
 import { createForm } from '@formily/core';
 import { createSchemaField } from '@formily/react';
 import {
@@ -75,6 +75,9 @@ const SchemaField = createSchemaField({
 
 export const PreviewWidget = (props) => {
   const form = useMemo(() => createForm(), []);
+  useEffect(() => {
+    form.setValues({ abcStep: 2, abc: 'abc' });
+  }, [form]);
   const { form: formProps, schema } = transformToSchema(props.tree);
   return (
     <Form

@@ -97,6 +97,12 @@ export const Steps = {
                 },
             },
         },
+        default: {
+            type: 'number',
+            'x-decorator': 'FormItem',
+            'x-component': 'NumberPicker',
+            default: 0
+        }
         // $options: {
         //     type: 'array',
         //     'x-component': 'ArrayItems',
@@ -185,12 +191,7 @@ export const Steps = {
         //         },
         //     },
         // },
-        current: {
-            type: 'string',
-            'x-decorator': 'FormItem',
-            'x-component': 'NumberPicker',
-            default: 0
-        },
+      
 
     },
 };
