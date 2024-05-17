@@ -15,7 +15,7 @@ export const Text = {
       'x-component-props': {
         defaultValue: 'normal',
       },
-      enum: ['h1', 'h2', 'h3', 'p', 'normal'],
+      enum: ['h1', 'h2', 'h3', 'p', 'normal', 'richText'],
     },
   },
 };

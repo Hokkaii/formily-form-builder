@@ -33,9 +33,32 @@ import { Card, Slider, Rate } from 'antd';
 import { Steps } from '../source/components/Steps';
 import { transformToSchema } from '@designable/formily-transformer';
 
-const Text = ({ value, mode, content, ...props }) => {
+const Text = ({ value, mode, content, style, ...props }) => {
+  if (mode === 'richText') {
+    return React.createElement('div', {
+      dangerouslySetInnerHTML: { __html: value || content },
+      style,
+      ...props,
+    });
+  }
+  if (mode === 'a') {
+    return React.createElement(
+      'div',
+      {
+        style,
+      },
+      React.createElement('a', { ...props }, value || content)
+    );
+  }
   const tagName = mode === 'normal' || !mode ? 'div' : mode;
-  return React.createElement(tagName, props, value || content);
+  return React.createElement(
+    tagName,
+    {
+      ...props,
+      style,
+    },
+    value || content
+  );
 };
 
 const SchemaField = createSchemaField({
